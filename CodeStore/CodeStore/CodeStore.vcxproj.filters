@@ -13,10 +13,19 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\EffectiveCPP">
+      <UniqueIdentifier>{2dbbf8fa-c3ed-4219-827c-a60abc8728dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeStrToTime.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="testFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectiveCPP\Item12.cpp">
+      <Filter>源文件\EffectiveCPP</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

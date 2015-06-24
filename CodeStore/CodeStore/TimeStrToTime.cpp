@@ -30,7 +30,7 @@ time_t FormatTime2(const char * szTime)
 	return time1;
 }
 
-void main()
+void main1()
 {
 	std::string time_s = "20:00:00";
 	time_t time = FormatTime2(time_s.c_str());
