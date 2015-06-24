@@ -40,6 +40,7 @@ public:
 	{
 		//这里对base进行赋值
 		//如果没有这一步，那么只赋值了派生类。
+		//如果没有重写默认构造函数，则不需要这一步
 		__super::operator=(res); 
 
 		priority = res.priority;
