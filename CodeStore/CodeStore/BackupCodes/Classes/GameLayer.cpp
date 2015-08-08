@@ -164,8 +164,8 @@ void GameLayer::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
 bool GameLayer::doUp()
 {
 	bool ret = false;
-	//从最上面一行开始看遍历。
-	for (int x = 0; x < 4 ; x++)
+	//从最上面一行开始遍历。
+	for (int x = 0; x < 4; x++)
 	{
 		for (int y = 3; y >= 0 ; y--)
 		{
@@ -174,31 +174,31 @@ bool GameLayer::doUp()
 			{
 				continue;
 			}
-			for (int check_index = 3; check_index > y; check_index--)
+			int move_to = y;
+			for (int check_index = y + 1; check_index < 4; check_index ++)
 			{
 				GridCard* check_grid = gridArr[x][check_index];
+				if (check_grid->show_num == 0 || check_grid->show_num == grid->show_num)
+				{
+					move_to = check_index;
+				}
+				else if (check_grid->show_num != 0 && check_grid->show_num != grid->show_num)
+				{
+					break;
+				}
+			}
+			if (move_to != y)
+			{
+				GridCard* check_grid = gridArr[x][move_to];
 				if (check_grid->show_num == 0)
 				{
-					//move到这里
-					CCString* str = CCString::createWithFormat("%d,%d moveto  %d, %d ", x, y, x, check_index);
-					CCLog(str->getCString());
 					grid_move(grid, check_grid);
-					ret = true;
-					break;
 				}
-				else if (check_grid->show_num == grid->show_num)
+				else
 				{
-					//合并
-					CCString* str = CCString::createWithFormat("%d,%d moveto  %d, %d ", x, y, x, check_index);
-					CCLog(str->getCString());
 					grid_merge(grid, check_grid);
-					ret = true;
-					break;
 				}
-				else if (check_grid->show_num != grid->show_num)
-				{
-					break;
-				}
+				ret = true;
 			}
 		}
 	}
@@ -208,7 +208,7 @@ bool GameLayer::doUp()
 bool GameLayer::doDown()
 {
 	bool ret = false;
-	//从最下面一行开始看遍历。
+	//从最下面一行开始遍历。
 	for (int x = 0; x < 4; x++)
 	{
 		for (int y = 0; y < 4; y++)
@@ -218,32 +218,31 @@ bool GameLayer::doDown()
 			{
 				continue;
 			}
-			for (int check_index = 0; check_index < y; check_index++)
+			int move_to = y;
+			for (int check_index = y - 1; check_index >=0 ; check_index--)
 			{
 				GridCard* check_grid = gridArr[x][check_index];
+				if (check_grid->show_num == 0 || check_grid->show_num == grid->show_num)
+				{
+					move_to = check_index;
+				}
+				else if (check_grid->show_num != 0 && check_grid->show_num != grid->show_num)
+				{
+					break;
+				}
+			}
+			if (move_to != y)
+			{
+				GridCard* check_grid = gridArr[x][move_to];
 				if (check_grid->show_num == 0)
 				{
-					//move到这里
-					CCString* str = CCString::createWithFormat("%d,%d moveto  %d, %d ", x, y, x, check_index);
-					CCLog(str->getCString());
 					grid_move(grid, check_grid);
-					ret = true;
-					break;
 				}
-
-				else if (check_grid->show_num == grid->show_num)
+				else
 				{
-					//合并
-					CCString* str = CCString::createWithFormat("%d,%d moveto  %d, %d ", x, y, x, check_index);
-					CCLog(str->getCString());
 					grid_merge(grid, check_grid);
-					ret = true;
-					break;
 				}
-				else if (check_grid->show_num != grid->show_num)
-				{
-					break;
-				}
+				ret = true;
 			}
 		}
 	}
@@ -253,7 +252,7 @@ bool GameLayer::doDown()
 bool GameLayer::doLeft()
 {
 	bool ret = false;
-	//从最左面一行开始看遍历。
+	//从最左面一行开始遍历。
 	for (int y = 0; y < 4; y++)
 	{
 		for (int x = 0; x < 4; x++)
@@ -263,28 +262,31 @@ bool GameLayer::doLeft()
 			{
 				continue;
 			}
-			for (int check_index = 0; check_index < x ; check_index++)
+			int move_to = x;
+			for (int check_index = x - 1; check_index >= 0 ; check_index--)
 			{
 				GridCard* check_grid = gridArr[check_index][y];
+				if (check_grid->show_num == 0 || check_grid->show_num == grid->show_num)
+				{
+					move_to = check_index;
+				}
+				else if (check_grid->show_num != 0 && check_grid->show_num != grid->show_num)
+				{
+					break;
+				}
+			}
+			if (move_to != x)
+			{
+				GridCard* check_grid = gridArr[move_to][y];
 				if (check_grid->show_num == 0)
 				{
-					//move到这里
-					CCString* str = CCString::createWithFormat("%d,%d moveto  %d, %d ", x, y, x, check_index);
-					CCLog(str->getCString());
 					grid_move(grid, check_grid);
-					ret = true;
-					break;
 				}
-				else if (check_grid->show_num == grid->show_num)
+				else
 				{
-					//合并
-					CCString* str = CCString::createWithFormat("%d,%d moveto  %d, %d ", x, y, x, check_index);
-					CCLog(str->getCString());
 					grid_merge(grid, check_grid);
-					ret = true;
-					break;
 				}
-				
+				ret = true;
 			}
 		}
 	}
@@ -294,41 +296,41 @@ bool GameLayer::doLeft()
 bool GameLayer::doRight()
 {
 	bool ret = false;
-	//从最右面一行开始看遍历。
+	//从最右边面一行开始遍历。
 	for (int y = 0; y < 4; y++)
 	{
-		for (int x = 3; x >=0 ; x--)
+		for (int x = 3; x>= 0; x--)
 		{
 			GridCard* grid = gridArr[x][y];
 			if (grid->show_num == 0)
 			{
 				continue;
 			}
-			for (int check_index = 3; check_index > x; check_index--)
+			int move_to = x;
+			for (int check_index = x + 1; check_index <=3 ; check_index++)
 			{
 				GridCard* check_grid = gridArr[check_index][y];
+				if (check_grid->show_num == 0 || check_grid->show_num == grid->show_num)
+				{
+					move_to = check_index;
+				}
+				else if (check_grid->show_num != 0 && check_grid->show_num != grid->show_num)
+				{
+					break;
+				}
+			}
+			if (move_to != x)
+			{
+				GridCard* check_grid = gridArr[move_to][y];
 				if (check_grid->show_num == 0)
 				{
-					//move到这里
-					CCString* str = CCString::createWithFormat("%d,%d moveto  %d, %d ", x, y, x, check_index);
-					CCLog(str->getCString());
 					grid_move(grid, check_grid);
-					break;
 				}
-
-				else if (check_grid->show_num == grid->show_num)
+				else
 				{
-					//合并
-					CCString* str = CCString::createWithFormat("%d,%d moveto  %d, %d ", x, y, x, check_index);
-					CCLog(str->getCString());
 					grid_merge(grid, check_grid);
-					ret = true;
-					break;
 				}
-				else if (check_grid->show_num != grid->show_num)
-				{
-					break;
-				}
+				ret = true;
 			}
 		}
 	}
