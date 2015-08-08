@@ -14,10 +14,16 @@ USING_NS_CC;
 class GridCard : public CCSprite
 {
 public:
+	GridCard() :show_num(0){}
+	~GridCard(){}
 	CREATE_FUNC(GridCard);
+	virtual bool init();
 	void setSF(const char* frameName);
 
-	int num;
+	void set_num(int num);
+	void remove_num();
+
+	int show_num;
 
 protected:
 private:

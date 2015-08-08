@@ -4,6 +4,10 @@
 
 void MainScene::initLayers()
 {
+	struct timeval now;
+	gettimeofday(&now, NULL);
+
+	srand(now.tv_sec);
 	//±³¾°
 	CCLayerColor* bgLayer = CCLayerColor::create(ccc4(180, 170, 160, 255));
 	addChild(bgLayer);

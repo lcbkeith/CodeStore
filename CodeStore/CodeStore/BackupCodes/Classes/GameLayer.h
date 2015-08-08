@@ -27,17 +27,25 @@ public:
 	virtual void onEnter();
 	virtual void onExit();
 
-	virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
-	virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
-
 	virtual void ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent);
-	virtual void ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent);
+	virtual void ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent);
 	void begin_create();
 
 	void create_new_num();
+
+	bool doUp();
+	bool doDown();
+	bool doLeft();
+	bool doRight();
+
+	void check_opt(GridCard* g1, GridCard* g2);
+	void grid_move(GridCard* g1, GridCard* g2);
+	void grid_merge(GridCard* g1, GridCard* g2);
 
 private:
 	GridCard* gridArr[4][4];
 	CCLayer* grid_layer;
 	CCLayer* scores_layer;
+
+	CCPoint begin_point;
 };
