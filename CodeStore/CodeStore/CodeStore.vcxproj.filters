@@ -19,6 +19,9 @@
     <Filter Include="源文件\Funcs">
       <UniqueIdentifier>{7b18c961-e07a-471b-b6dd-781e80b9f8e9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="RankList">
+      <UniqueIdentifier>{d0faf1c0-1b38-43ce-867d-73eddcbb1489}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeStrToTime.cpp">
@@ -36,5 +39,18 @@
     <ClCompile Include="randomgen.cpp">
       <Filter>源文件\Funcs</Filter>
     </ClCompile>
+    <ClCompile Include="Rank.cpp">
+      <Filter>RankList</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Rank.h">
+      <Filter>RankList</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt">
+      <Filter>RankList</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -81,8 +81,15 @@
     <ClCompile Include="EffectiveCPP\Item12.cpp" />
     <ClCompile Include="Item25.cpp" />
     <ClCompile Include="randomgen.cpp" />
+    <ClCompile Include="Rank.cpp" />
     <ClCompile Include="testFile.cpp" />
     <ClCompile Include="TimeStrToTime.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Rank.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
