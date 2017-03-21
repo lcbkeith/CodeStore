@@ -150,12 +150,14 @@
     <ClCompile Include="EffectiveCPP\Item25.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RankList\Rank.cpp" />
+    <ClCompile Include="RankList\VectorRank.cpp" />
     <ClCompile Include="Sth\randomgen.cpp" />
     <ClCompile Include="Sth\testFile.cpp" />
     <ClCompile Include="Sth\TimeStrToTime.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RankList\Rank.h" />
+    <ClInclude Include="RankList\VectorRank.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="RankList\readme.txt" />

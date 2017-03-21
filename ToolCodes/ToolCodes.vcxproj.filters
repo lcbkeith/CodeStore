@@ -35,9 +35,15 @@
     <ClCompile Include="Sth\TimeStrToTime.cpp">
       <Filter>Sth</Filter>
     </ClCompile>
+    <ClCompile Include="RankList\VectorRank.cpp">
+      <Filter>RankList</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RankList\Rank.h">
+      <Filter>RankList</Filter>
+    </ClInclude>
+    <ClInclude Include="RankList\VectorRank.h">
       <Filter>RankList</Filter>
     </ClInclude>
   </ItemGroup>
