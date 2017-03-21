@@ -68,6 +68,11 @@ public:
 	void PrintOut();
 	bool Check();
 
+	void BindInsertTest(RankItem& rankItem);
+	int FindIndexTest(int64 id);
+
+	bool PushWithoutKeepIndex(RankItem& rankItem);
+
 	RankVec m_rankVec;
 	RankIndexMap m_rankIndexMap;
 	int m_maxSize;

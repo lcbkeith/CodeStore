@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <iostream>
 #include <ostream>
+#include <vector>
 
 RankList::RankList(RankType type, bool autoSort /*= true*/, int maxSize /*= 0 */)
 	:m_rankType(type),
@@ -230,3 +231,100 @@ bool RankList::Check()
 	}
 	return true;
 }
+
+void RankList::BindInsertTest(RankItem& rankItem)
+{
+	if (!m_rankVec.empty())
+	{
+		// find and ease
+		RankVec::iterator itL = std::find_if(m_rankVec.begin(), m_rankVec.end(), vectorFinder<RankItem>(rankItem.m_id));
+
+		if (itL != m_rankVec.end())
+		{
+			if (itL->m_rankVal >= rankItem.m_rankVal)
+			{
+				return;
+			}
+			else
+			{
+				m_rankVec.erase(itL);
+			}
+		}
+	}
+
+	// insert 
+	m_rankVec.insert(std::upper_bound(m_rankVec.begin(), m_rankVec.end(), rankItem, greaterRankVal()), rankItem);
+
+}
+
+int RankList::FindIndexTest(int64 id)
+{
+	auto iter = std::find_if(m_rankVec.begin(), m_rankVec.end(), vectorFinder<RankItem>(id));
+	if (iter == m_rankVec.end())
+	{
+		return -1;
+	}
+	return iter - m_rankVec.begin();
+}
+
+bool RankList::PushWithoutKeepIndex(RankItem& rankItem)
+{
+	if (m_rankVec.empty())
+	{
+		m_rankVec.push_back(rankItem);
+		return true;
+	}
+	RankVec::iterator vecIter = std::find_if(m_rankVec.begin(), m_rankVec.end(), vectorFinder<RankItem>(rankItem.m_id));
+
+	if (vecIter != m_rankVec.end())
+	{
+		int64 nowValue = vecIter->m_rankVal;
+		//if (m_rankType == RANK_COVER)
+		//{
+		// 			
+		//}
+		if (m_rankType == RANK_TAKEBIGGER)
+		{
+			if (vecIter->m_rankVal >= rankItem.m_rankVal)
+			{
+				return false;
+			}
+		}
+		else if (m_rankType == RANK_ACCUMULATION)
+		{
+			rankItem.m_rankVal = nowValue + rankItem.m_rankVal;
+		}
+
+		if (vecIter->m_rankVal == nowValue)
+		{
+			return true;
+		}
+		m_rankVec.erase(vecIter);
+		m_rankVec.insert(std::upper_bound(m_rankVec.begin(), m_rankVec.end(), rankItem, greaterRankVal()), rankItem);
+	}
+	else
+	{
+		if (IsFull())
+		{
+			Sort();
+			if (rankItem.m_rankVal <= m_rankVec.back().m_rankVal)
+			{
+				return false;
+			}
+			m_rankVec.pop_back();
+			m_rankVec.insert(std::upper_bound(m_rankVec.begin(), m_rankVec.end(), rankItem, greaterRankVal()), rankItem);
+			return true;
+		}
+
+		if (m_autoSort)
+		{
+			m_rankVec.insert(std::upper_bound(m_rankVec.begin(), m_rankVec.end(), rankItem, greaterRankVal()), rankItem);
+		}
+		else
+		{
+			m_rankVec.push_back(rankItem);
+		}
+	}
+	return true;
+}
+
