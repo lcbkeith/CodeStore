@@ -285,7 +285,7 @@ bool RankList::PushWithoutKeepIndex(RankItem& rankItem)
 		//}
 		if (m_rankType == RANK_TAKEBIGGER)
 		{
-			if (vecIter->m_rankVal >= rankItem.m_rankVal)
+			if (nowValue >= rankItem.m_rankVal)
 			{
 				return false;
 			}
@@ -295,7 +295,7 @@ bool RankList::PushWithoutKeepIndex(RankItem& rankItem)
 			rankItem.m_rankVal = nowValue + rankItem.m_rankVal;
 		}
 
-		if (vecIter->m_rankVal == nowValue)
+		if (rankItem.m_id == nowValue)
 		{
 			return true;
 		}
@@ -323,6 +323,7 @@ bool RankList::PushWithoutKeepIndex(RankItem& rankItem)
 		else
 		{
 			m_rankVec.push_back(rankItem);
+			m_sorted = false;
 		}
 	}
 	return true;
