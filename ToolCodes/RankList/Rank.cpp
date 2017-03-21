@@ -299,8 +299,15 @@ bool RankList::PushWithoutKeepIndex(RankItem& rankItem)
 		{
 			return true;
 		}
-		m_rankVec.erase(vecIter);
-		m_rankVec.insert(std::upper_bound(m_rankVec.begin(), m_rankVec.end(), rankItem, greaterRankVal()), rankItem);
+		if (m_autoSort)
+		{
+			m_rankVec.erase(vecIter);
+			m_rankVec.insert(std::upper_bound(m_rankVec.begin(), m_rankVec.end(), rankItem, greaterRankVal()), rankItem);
+		}
+		else
+		{
+			vecIter->m_rankVal = rankItem.m_rankVal;
+		}
 	}
 	else
 	{
