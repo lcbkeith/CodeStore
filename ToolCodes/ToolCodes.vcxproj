@@ -71,6 +71,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>D:\Dev\CodeStore\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -87,12 +88,13 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -148,6 +150,7 @@
   <ItemGroup>
     <ClCompile Include="EffectiveCPP\Item12.cpp" />
     <ClCompile Include="EffectiveCPP\Item25.cpp" />
+    <ClCompile Include="libcurl\ccurl.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RankList\Rank.cpp" />
     <ClCompile Include="RankList\VectorRank.cpp" />
@@ -156,6 +159,16 @@
     <ClCompile Include="Sth\TimeStrToTime.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="libcurl\ccurl.h" />
+    <ClInclude Include="libcurl\curl\curl.h" />
+    <ClInclude Include="libcurl\curl\curlbuild.h" />
+    <ClInclude Include="libcurl\curl\curlrules.h" />
+    <ClInclude Include="libcurl\curl\curlver.h" />
+    <ClInclude Include="libcurl\curl\easy.h" />
+    <ClInclude Include="libcurl\curl\mprintf.h" />
+    <ClInclude Include="libcurl\curl\multi.h" />
+    <ClInclude Include="libcurl\curl\stdcheaders.h" />
+    <ClInclude Include="libcurl\curl\typecheck-gcc.h" />
     <ClInclude Include="RankList\Rank.h" />
     <ClInclude Include="RankList\VectorRank.h" />
   </ItemGroup>

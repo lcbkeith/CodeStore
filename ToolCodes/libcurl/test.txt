@@ -1,0 +1,9 @@
+	CCUrl curl;
+	curl.init();
+	string data;
+	if (curl.doHttpGet("www.baidu.com", data.c_str()) != -1)
+	{
+		string res = curl.getResultStr();
+		cout << res << endl;
+	}
+	

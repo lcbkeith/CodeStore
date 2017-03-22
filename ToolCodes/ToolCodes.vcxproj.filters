@@ -14,6 +14,12 @@
     <Filter Include="Sth">
       <UniqueIdentifier>{d046cf17-5aff-456b-9619-9ed412048760}</UniqueIdentifier>
     </Filter>
+    <Filter Include="libcurl">
+      <UniqueIdentifier>{d072a084-6ac9-48e1-acc7-c5e1dc5f3f30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libcurl\curl">
+      <UniqueIdentifier>{f595529e-bf40-426d-9e1a-6aac40d6f50e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -37,6 +43,8 @@
     </ClCompile>
     <ClCompile Include="RankList\VectorRank.cpp">
       <Filter>RankList</Filter>
+    <ClCompile Include="libcurl\ccurl.cpp">
+      <Filter>libcurl</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -45,6 +53,35 @@
     </ClInclude>
     <ClInclude Include="RankList\VectorRank.h">
       <Filter>RankList</Filter>
+    <ClInclude Include="libcurl\curl\curl.h">
+      <Filter>libcurl\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\curlbuild.h">
+      <Filter>libcurl\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\curlrules.h">
+      <Filter>libcurl\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\curlver.h">
+      <Filter>libcurl\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\easy.h">
+      <Filter>libcurl\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\mprintf.h">
+      <Filter>libcurl\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\multi.h">
+      <Filter>libcurl\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\stdcheaders.h">
+      <Filter>libcurl\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\typecheck-gcc.h">
+      <Filter>libcurl\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\ccurl.h">
+      <Filter>libcurl</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
