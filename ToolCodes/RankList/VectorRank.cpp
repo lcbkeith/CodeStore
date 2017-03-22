@@ -1,5 +1,7 @@
 #include "VectorRank.h"
 #include <algorithm>
+namespace VectorRank
+{
 
 RankList::RankList()
 	:m_rankType(RANK_COVER),
@@ -169,3 +171,5 @@ bool RankList::Inited()
 	return m_inited;
 }
 
+
+}

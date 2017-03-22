@@ -4,6 +4,9 @@
 #include <vector>
 #include <map>
 using namespace std;
+namespace VectorRank
+{
+
 
 typedef __int64 int64;
 class RankItem
@@ -89,3 +92,4 @@ private:
 
 
 
+}
