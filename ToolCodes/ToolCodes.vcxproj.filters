@@ -1,31 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="EffectiveCPP\Item12.cpp" />
-    <ClCompile Include="EffectiveCPP\Item25.cpp" />
-    <ClCompile Include="libcurl\ccurl.cpp" />
+    <ClCompile Include="libcurl\ccurl.cpp">
+      <Filter>libcur</Filter>
+    </ClCompile>
+    <ClCompile Include="Sth\randomgen.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectiveCPP\Item12.cpp">
+      <Filter>EffectiveCPP</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectiveCPP\Item25.cpp">
+      <Filter>EffectiveCPP</Filter>
+    </ClCompile>
+    <ClCompile Include="RankList\Rank.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Sth\testFile.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Sth\TimeStrToTime.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="RankList\VectorRank.cpp">
+      <Filter>RankList</Filter>
+    </ClCompile>
+    <ClCompile Include="libcurl_main.cpp">
+      <Filter>libcur</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="RankList\Rank.cpp" />
-    <ClCompile Include="RankList\VectorRank.cpp" />
-    <ClCompile Include="Sth\randomgen.cpp" />
-    <ClCompile Include="Sth\testFile.cpp" />
-    <ClCompile Include="Sth\TimeStrToTime.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="libcurl\ccurl.h" />
-    <ClInclude Include="libcurl\curl\curl.h" />
-    <ClInclude Include="libcurl\curl\curlbuild.h" />
-    <ClInclude Include="libcurl\curl\curlrules.h" />
-    <ClInclude Include="libcurl\curl\curlver.h" />
-    <ClInclude Include="libcurl\curl\easy.h" />
-    <ClInclude Include="libcurl\curl\mprintf.h" />
-    <ClInclude Include="libcurl\curl\multi.h" />
-    <ClInclude Include="libcurl\curl\stdcheaders.h" />
-    <ClInclude Include="libcurl\curl\typecheck-gcc.h" />
-    <ClInclude Include="RankList\Rank.h" />
-    <ClInclude Include="RankList\VectorRank.h" />
+    <ClInclude Include="libcurl\curl\curlver.h">
+      <Filter>libcur</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\ccurl.h">
+      <Filter>libcur</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\curl.h">
+      <Filter>libcur</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\curlbuild.h">
+      <Filter>libcur</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\curlrules.h">
+      <Filter>libcur</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\easy.h">
+      <Filter>libcur</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\multi.h">
+      <Filter>libcur</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\typecheck-gcc.h">
+      <Filter>libcur</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\mprintf.h">
+      <Filter>libcur</Filter>
+    </ClInclude>
+    <ClInclude Include="RankList\Rank.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="libcurl\curl\stdcheaders.h">
+      <Filter>libcur</Filter>
+    </ClInclude>
+    <ClInclude Include="RankList\VectorRank.h">
+      <Filter>RankList</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleDeque\CircleDeque.h">
+      <Filter>CircleDeque</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="RankList\readme.txt" />
+    <Filter Include="libcur">
+      <UniqueIdentifier>{896b405b-596b-4300-8a4a-52c17fee7d13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools">
+      <UniqueIdentifier>{66a1454c-1b9c-4451-aad3-197b2f2873df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EffectiveCPP">
+      <UniqueIdentifier>{51ce1801-e9bb-4c88-93b3-eeec25ef78fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RankList">
+      <UniqueIdentifier>{ba2c5462-86a6-4020-9fb7-5b5f96f8b841}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CircleDeque">
+      <UniqueIdentifier>{6dba05dd-c7a4-4aed-87dc-8e4b01f6530a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="RankList\readme.txt">
+      <Filter>tools</Filter>
+    </Text>
   </ItemGroup>
 </Project>

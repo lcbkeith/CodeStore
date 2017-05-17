@@ -151,6 +151,7 @@
     <ClCompile Include="EffectiveCPP\Item12.cpp" />
     <ClCompile Include="EffectiveCPP\Item25.cpp" />
     <ClCompile Include="libcurl\ccurl.cpp" />
+    <ClCompile Include="libcurl_main.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RankList\Rank.cpp" />
     <ClCompile Include="RankList\VectorRank.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="Sth\TimeStrToTime.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CircleDeque\CircleDeque.h" />
     <ClInclude Include="libcurl\ccurl.h" />
     <ClInclude Include="libcurl\curl\curl.h" />
     <ClInclude Include="libcurl\curl\curlbuild.h" />
