@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Chapter1">
+      <UniqueIdentifier>{6959a397-82ba-4789-825c-47371d7b6d74}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="practice1_2.cpp">
+      <Filter>Chapter1</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
