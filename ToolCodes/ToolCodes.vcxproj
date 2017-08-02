@@ -171,6 +171,7 @@
     <ClInclude Include="libcurl\curl\multi.h" />
     <ClInclude Include="libcurl\curl\stdcheaders.h" />
     <ClInclude Include="libcurl\curl\typecheck-gcc.h" />
+    <ClInclude Include="MsgPool.h" />
     <ClInclude Include="RankList\Rank.h" />
     <ClInclude Include="RankList\VectorRank.h" />
   </ItemGroup>

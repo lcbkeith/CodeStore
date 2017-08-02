@@ -70,6 +70,9 @@
     <ClInclude Include="CircleDeque\CircleDeque.h">
       <Filter>CircleDeque</Filter>
     </ClInclude>
+    <ClInclude Include="MsgPool.h">
+      <Filter>MsgPool</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="libcur">
@@ -86,6 +89,9 @@
     </Filter>
     <Filter Include="CircleDeque">
       <UniqueIdentifier>{6dba05dd-c7a4-4aed-87dc-8e4b01f6530a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MsgPool">
+      <UniqueIdentifier>{c0db3731-44c2-4c79-b13e-7f594904da14}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

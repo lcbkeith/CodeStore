@@ -1,6 +1,7 @@
 #include "CircleDeque/CircleDeque.h"
 #include <time.h>
 #include <iostream>
+#include "MsgPool.h"
 
 struct Ts
 {
@@ -8,35 +9,37 @@ struct Ts
 	void Clear() { i = 0; }
 	int i;
 };
+
+struct Mem
+{
+	void* mem;
+	size_t size;
+};
 void main()
 {
 	srand(time(NULL));
-	CircleDeque<Ts> testQueue(4);
+	MessagePool pool;
 
-	for (int idx = 0; idx < 1000; idx++)
+	std::vector<Mem> vec;
+
+	for (int index = 0; index < 10; index++)
 	{
-		
-		int rnd = rand() % 100;
-		std::cout << rnd << std::endl;
-		if (rnd >=70)
-		{
-			Ts ts;
-			ts.i = 1 + idx;
-			testQueue.PushFront(ts);
-		}
-		else if (rnd >= 30)
-		{
-			Ts ts2;
-			ts2.i = 1 + idx;
-			testQueue.PushBack(ts2);
-		}
-		else if (rnd>= 15)
-		{
-			testQueue.PopFront();
-		}
-		else
-		{
-			testQueue.PopBack();
-		}
+		int rndSize = (rand() % 1024)+1;
+		Mem mem;
+		mem.mem = pool.alloc(rndSize);
+		mem.size = rndSize;
+
+		vec.push_back(mem);
+	}
+
+	while (!vec.empty())
+	{
+		int rnd = rand() % vec.size();
+
+		auto iter = vec.begin() + rnd;
+
+		Mem& mem = *iter;
+
+		pool.free(mem.mem, mem.size);
 	}
 }
