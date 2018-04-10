@@ -29,6 +29,9 @@
       <Filter>libcur</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="AStar\AStar.cpp">
+      <Filter>AStar</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libcurl\curl\curlver.h">
@@ -73,6 +76,12 @@
     <ClInclude Include="MsgPool.h">
       <Filter>MsgPool</Filter>
     </ClInclude>
+    <ClInclude Include="AStar\atart_node.h">
+      <Filter>AStar</Filter>
+    </ClInclude>
+    <ClInclude Include="AStar\CVector3.h">
+      <Filter>AStar</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="libcur">
@@ -92,6 +101,9 @@
     </Filter>
     <Filter Include="MsgPool">
       <UniqueIdentifier>{c0db3731-44c2-4c79-b13e-7f594904da14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AStar">
+      <UniqueIdentifier>{ebc144b5-fc33-454e-8d6e-516b0e1c0291}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -31,16 +31,16 @@ bool get(int n)
 	return content[n >> SHIFT] & (1 << (n & MASK));
 }
 
-// void main()
-// {
-// 	for (int idx = 0; idx < N; idx++)
-// 	{
-// 		clr(idx);
-// 	}
-// 
-// 	set(12);
-// 	set(32);
-// 	clr(12);
-// 
-// 	bool test = get(32);
-// }
+void main()
+{
+	for (int idx = 0; idx < N; idx++)
+	{
+		clr(idx);
+	}
+
+	set(12);
+	set(32);
+	clr(12);
+
+	bool test = get(32);
+}
