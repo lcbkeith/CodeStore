@@ -156,6 +156,9 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RankList\Rank.cpp" />
     <ClCompile Include="RankList\VectorRank.cpp" />
+    <ClCompile Include="SortAlgorithm\HeapSort.cpp" />
+    <ClCompile Include="SortAlgorithm\MergeSort.cpp" />
+    <ClCompile Include="SortAlgorithm\QSort.cpp" />
     <ClCompile Include="Sth\randomgen.cpp" />
     <ClCompile Include="Sth\testFile.cpp" />
     <ClCompile Include="Sth\TimeStrToTime.cpp" />

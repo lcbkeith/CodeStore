@@ -32,6 +32,15 @@
     <ClCompile Include="AStar\AStar.cpp">
       <Filter>AStar</Filter>
     </ClCompile>
+    <ClCompile Include="SortAlgorithm\MergeSort.cpp">
+      <Filter>SortAlgorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="SortAlgorithm\QSort.cpp">
+      <Filter>SortAlgorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="SortAlgorithm\HeapSort.cpp">
+      <Filter>SortAlgorithm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libcurl\curl\curlver.h">
@@ -104,6 +113,9 @@
     </Filter>
     <Filter Include="AStar">
       <UniqueIdentifier>{ebc144b5-fc33-454e-8d6e-516b0e1c0291}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SortAlgorithm">
+      <UniqueIdentifier>{ee76e571-426b-4503-9cfc-ae49521c887a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
